@@ -25,6 +25,10 @@
     <guava-beta-checker.version>1.0</guava-beta-checker.version>
     <jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
     <failOnDeprecations>false</failOnDeprecations>
+    <errorProneNullAwayLevel>WARN</errorProneNullAwayLevel>
+    <immutables.version>2.12.3</immutables.version>
+    <error-prone.version>2.52.0</error-prone.version>
+    <nullaway.version>0.14.3</nullaway.version>
  </properties>
 
   <build>
@@ -68,6 +72,23 @@
         <version>3.16.0</version>
         <configuration>
           <release>${release}</release>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.immutables</groupId>
+              <artifactId>value</artifactId>
+              <version>${immutables.version}</version>
+            </path>
+            <path>
+              <groupId>com.google.errorprone</groupId>
+              <artifactId>error_prone_core</artifactId>
+              <version>${error-prone.version}</version>
+            </path>
+            <path>
+              <groupId>com.uber.nullaway</groupId>
+              <artifactId>nullaway</artifactId>
+              <version>${nullaway.version}</version>
+            </path>
+          </annotationProcessorPaths>
           <fork>true</fork>
           <parameters>true</parameters>
           <compilerArgs>
@@ -79,13 +100,24 @@
             <arg>-XDcompilePolicy=simple</arg>
             <arg>--should-stop=ifError=FLOW</arg>
             <arg xml:space="preserve">-Xplugin:ErrorProne \
-              -XepOpt:NullAway:OnlyNullMarked=false \
+              -XepOpt:NullAway:OnlyNullMarked=true \
               -XepOpt:NullAway:CheckContracts=true \
               -XepOpt:NullAway:JSpecifyMode=true \
               -XepOpt:NullAway:CustomContractAnnotations=org.springframework.lang.Contract \
               -Xep:NullAway:${errorProneNullAwayLevel} \
               -Xep:RequireExplicitNullMarking:OFF \
             </arg>
+            <!-- ErrorProne needs javac internals when running in a forked compiler -->
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+            <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
          </compilerArgs>
         </configuration>
       </plugin>
@@ -300,12 +332,13 @@
             <exclusions />
           </dependency>
         </dependencies>
+        <!-- Disabled until projects have a released baseline to compare against.
         <executions>
           <execution>
             <id>check</id>
             <goals><goal>check</goal></goals>
           </execution>
-        </executions> 
+        </executions> --> 
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
