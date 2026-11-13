@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.repaint</groupId>
+  <artifactId>io.repaint.tiles.enforcement</artifactId>
+  <version>${nisse.jgit.dynamicVersion}</version>
+  <packaging>tile</packaging>
+
+  <name>Standard Code Style / Enforcer Rules</name>
+  <description>Standard plugins/configuration for enforceing code style.</description>
+  <url>http://smxemail.com</url>
+
+   <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>talios</id>
+      <email>mark@talios.com</email>
+      <name>Mark Derricutt</name>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:repaint-io/io.repaint.tiles.enforcement</connection>
+    <developerConnection>scm:git:git@github.com:repaint-io/io.repaint.tiles.enforcement</developerConnection>
+    <url>https://github.com/repaint-io/io.repaint.tiles.enforcement</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <distributionManagement>
+     <snapshotRepository>
+       <id>sonatype-central-portal</id>
+       <name>sonatype Snapshots</name>
+       <url>https://central.sonatype.com/repository/maven-snapshots</url>
+     </snapshotRepository>
+     <repository>
+       <id>sonatype-central-portal</id>
+       <name>Sonatype Releases</name>
+       <url>https://repo.maven.apache.org/maven2</url>
+     </repository>
+  </distributionManagement>
+
+  <properties>
+    <version.njord>0.9.10</version.njord>
+    <allowBlacklistedDependencies>false</allowBlacklistedDependencies>
+    <allowDeprecatedDependencies>true</allowDeprecatedDependencies>
+    <filterUnusedDependencies>true</filterUnusedDependencies>
+  </properties>
+  
+  <build>
+     <extensions>
+      <extension>
+        <groupId>eu.maveniverse.maven.njord</groupId>
+        <artifactId>extension3</artifactId>
+        <version>${version.njord}</version>
+      </extension>
+    </extensions>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>eu.maveniverse.maven.plugins</groupId>
+          <artifactId>njord</artifactId>
+          <version>${version.njord}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.2.8</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.47.0</version>
+        <extensions>true</extensions>
+      </plugin>
+      </plugins>
+  </build>
+</project>

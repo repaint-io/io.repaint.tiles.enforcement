@@ -1,0 +1,33 @@
+repository https://repo1.maven.org/maven2/ as central;
+
+resolve highest com.github.spotbugs:spotbugs-maven-plugin:[4.10.5.0,5.0.0) via central;
+resolve highest com.github.spotbugs:spotbugs:[4.10.5,5.0.0] via central;
+resolve highest com.khubla.antlr4formatter:antlr4-formatter:[1.2.1,2.0.0) via central;
+resolve highest com.h3xstream.findsecbugs:findsecbugs-plugin:[1.14.0,2.0.0) via central;
+resolve highest com.puppycrawl.tools:checkstyle:[14.4.0,15.0.0) via central;
+resolve highest org.apache.maven.plugins:maven-artifact-plugin:[3.7.0,4.0.0) via central;
+resolve highest org.apache.maven.plugins:maven-checkstyle-plugin:[3.6.0,4.0.0) via central;
+resolve highest org.apache.maven.plugins:maven-clean-plugin:[3.5.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
+resolve highest org.apache.maven.plugins:maven-compiler-plugin:[3.16.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
+resolve highest org.apache.maven.plugins:maven-dependency-plugin:[3.11.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
+resolve highest org.apache.maven.plugins:maven-enforcer-plugin:[3.7.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
+resolve highest org.apache.maven.plugins:maven-failsafe-plugin:[3.6.1,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*$/;
+resolve highest org.apache.maven.plugins:maven-javadoc-plugin:[3.12.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
+resolve highest org.apache.maven.plugins:maven-jdeprscan-plugin:[3.0.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
+resolve highest org.apache.maven.plugins:maven-resources-plugin:[3.5.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
+resolve highest org.apache.maven.plugins:maven-surefire-plugin:[3.6.1,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*$/;
+resolve highest org.codehaus.mojo:license-maven-plugin:[2.9.0,3.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*$/;
+resolve highest org.gaul:modernizer-maven-plugin:[3.5.0,4.0.0) via central;
+resolve highest org.immutables:value:[2.12.3,3.0.0) via central filtering /^.*(ea|alpha|beta|rc|pr|SNAPSHOT).*$/;
+resolve highest org.revapi:osgi-revapi-extension:[0.1.1,1.0.0) via central;
+resolve highest org.revapi:revapi-java:[0.28.4,1.0.0) via central;
+resolve highest org.revapi:revapi-maven-plugin:[0.15.1,1.0.0) via central;
+resolve highest org.revapi:revapi-reporter-text:[0.15.1,1.0.0) via central;
+resolve highest com.mebigfatguy.sb-contrib:sb-contrib:[7.7.4,8) via central;
+resolve highest me.fabriciorby:maven-surefire-junit5-tree-reporter:[1.5.1,2.0.0) via central;
+resolve highest tech.picnic.error-prone-support:error-prone-contrib:[0.30.0,1.0.0) via central;
+resolve highest tech.picnic.error-prone-support:refaster-runner:[0.30.0,1.0.0) via central;
+
+alias org.immutables:value as immutables.value.version;
+
+
