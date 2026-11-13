@@ -389,6 +389,11 @@
             <artifactId>extra-enforcer-rules</artifactId>
             <version>1.11.0</version>
           </dependency>
+          <dependency>
+            <groupId>com.theoryinpractise</groupId>
+            <artifactId>codeline-enforcer-rule</artifactId>
+            <version>1.0.15</version>
+          </dependency>
        </dependencies>
         <executions>
           <execution>
