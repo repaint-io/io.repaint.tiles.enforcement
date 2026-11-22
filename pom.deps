@@ -5,6 +5,7 @@ resolve highest com.github.spotbugs:spotbugs:[4.10.5,5.0.0] via central;
 resolve highest com.khubla.antlr4formatter:antlr4-formatter:[1.2.1,2.0.0) via central;
 resolve highest com.h3xstream.findsecbugs:findsecbugs-plugin:[1.14.0,2.0.0) via central;
 resolve highest com.puppycrawl.tools:checkstyle:[14.4.0,15.0.0) via central;
+resolve highest dev.openjavaformat:open-java-format:[21.0.2,22.0.0) via central;
 resolve highest org.apache.maven.plugins:maven-artifact-plugin:[3.7.0,4.0.0) via central;
 resolve highest org.apache.maven.plugins:maven-checkstyle-plugin:[3.6.0,4.0.0) via central;
 resolve highest org.apache.maven.plugins:maven-clean-plugin:[3.5.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*/;
@@ -30,4 +31,24 @@ resolve highest tech.picnic.error-prone-support:refaster-runner:[0.30.0,1.0.0) v
 
 alias org.immutables:value as immutables.value.version;
 
-
+locked com.github.spotbugs:spotbugs:4.10.5;
+locked com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0;
+locked com.h3xstream.findsecbugs:findsecbugs-plugin:1.14.0;
+locked com.mebigfatguy.sb-contrib:sb-contrib:7.7.4;
+locked dev.openjavaformat:open-java-format:21.0.2;
+locked me.fabriciorby:maven-surefire-junit5-tree-reporter:1.5.1;
+locked org.apache.maven.plugins:maven-artifact-plugin:3.7.0;
+locked org.apache.maven.plugins:maven-clean-plugin:3.5.0;
+locked org.apache.maven.plugins:maven-compiler-plugin:3.16.0;
+locked org.apache.maven.plugins:maven-enforcer-plugin:3.7.0;
+locked org.apache.maven.plugins:maven-failsafe-plugin:3.6.1;
+locked org.apache.maven.plugins:maven-javadoc-plugin:3.12.0;
+locked org.apache.maven.plugins:maven-jdeprscan-plugin:3.0.0;
+locked org.apache.maven.plugins:maven-resources-plugin:3.5.0;
+locked org.apache.maven.plugins:maven-surefire-plugin:3.6.1;
+locked org.gaul:modernizer-maven-plugin:3.5.0;
+locked org.immutables:value:2.12.3;
+locked org.revapi:osgi-revapi-extension:0.1.1;
+locked org.revapi:revapi-java:0.28.4;
+locked org.revapi:revapi-maven-plugin:0.15.1;
+locked org.revapi:revapi-reporter-text:0.15.1;

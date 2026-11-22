@@ -14,7 +14,7 @@
     <showWarnings>false</showWarnings>
     <checkedUnusedPrivates>true</checkedUnusedPrivates>
     <maxJdkVersion>${release}</maxJdkVersion>
-    <palantir-java-format.version>2.103.0</palantir-java-format.version>
+    <open-java-format.version>21.0.2</open-java-format.version>
     <ratchetFrom>NONE</ratchetFrom>
     <reformatJavadoc>true</reformatJavadoc>
     <spotless.check.skip>false</spotless.check.skip>
@@ -73,7 +73,7 @@
             <path>
               <groupId>org.immutables</groupId>
               <artifactId>value</artifactId>
-              <version>${immutables.version}</version>
+              <version>2.12.3</version>
             </path>
             <path>
               <groupId>com.google.errorprone</groupId>
@@ -206,7 +206,8 @@
             <trimTrailingWhitespace />
             <endWithNewline />
             <palantirJavaFormat>
-              <version>${palantir-java-format.version}</version>
+              <groupArtifact>dev.openjavaformat:open-java-format</groupArtifact>
+              <version>${open-java-format.version}</version>
               <formatJavadoc>${reformatJavadoc}</formatJavadoc>
             </palantirJavaFormat>
             <formatAnnotations />
@@ -484,8 +485,8 @@
                   </classes>
                   <checkPrivates>${checkedUnusedPrivates}</checkPrivates>
                 </codeLine>
-                <banCircularDependencies/>
-                <banDuplicateClasses/>
+                <banCircularDependencies />
+                <banDuplicateClasses />
               </rules>
             </configuration>
           </execution>
