@@ -2,6 +2,7 @@ repository https://repo1.maven.org/maven2/ as central;
 
 resolve highest com.github.spotbugs:spotbugs-maven-plugin:[4.10.5.0,5.0.0) via central;
 resolve highest com.github.spotbugs:spotbugs:[4.10.5,5.0.0] via central;
+resolve highest com.diffplug.spotless:spotless-maven-plugin:[3.12.0,4.0.0) via central filtering /^.*(alpha|beta|rc|pr|SNAPSHOT).*$/;
 resolve highest com.khubla.antlr4formatter:antlr4-formatter:[1.2.1,2.0.0) via central;
 resolve highest com.h3xstream.findsecbugs:findsecbugs-plugin:[1.14.0,2.0.0) via central;
 resolve highest com.puppycrawl.tools:checkstyle:[14.4.0,15.0.0) via central;
@@ -31,6 +32,7 @@ resolve highest tech.picnic.error-prone-support:refaster-runner:[0.30.0,1.0.0) v
 
 alias org.immutables:value as immutables.value.version;
 
+locked com.diffplug.spotless:spotless-maven-plugin:3.12.0;
 locked com.github.spotbugs:spotbugs:4.10.5;
 locked com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0;
 locked com.h3xstream.findsecbugs:findsecbugs-plugin:1.14.0;
