@@ -32,12 +32,13 @@ resolve highest tech.picnic.error-prone-support:refaster-runner:[0.30.0,1.0.0) v
 
 alias org.immutables:value as immutables.value.version;
 
+resolved dev.openjavaformat:open-java-format:21.1.1;
+
 locked com.diffplug.spotless:spotless-maven-plugin:3.12.0;
 locked com.github.spotbugs:spotbugs:4.10.5;
 locked com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0;
 locked com.h3xstream.findsecbugs:findsecbugs-plugin:1.14.0;
 locked com.mebigfatguy.sb-contrib:sb-contrib:7.7.4;
-locked dev.openjavaformat:open-java-format:21.0.2;
 locked me.fabriciorby:maven-surefire-junit5-tree-reporter:1.5.1;
 locked org.apache.maven.plugins:maven-artifact-plugin:3.7.0;
 locked org.apache.maven.plugins:maven-clean-plugin:3.5.0;

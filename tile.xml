@@ -14,7 +14,7 @@
     <showWarnings>false</showWarnings>
     <checkedUnusedPrivates>true</checkedUnusedPrivates>
     <maxJdkVersion>${release}</maxJdkVersion>
-    <open-java-format.version>21.0.2</open-java-format.version>
+    <open-java-format.version>21.1.1</open-java-format.version>
     <ratchetFrom>NONE</ratchetFrom>
     <reformatJavadoc>true</reformatJavadoc>
     <spotless.check.skip>false</spotless.check.skip>
